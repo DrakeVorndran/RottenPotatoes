@@ -7,6 +7,7 @@ mongoose.connect('mongodb://localhost/rotten-potatoes');
 const Review = mongoose.model('review',{
     title: String,
     description: String,
+    rating: Number,
     movieTitle: String
 });
 
