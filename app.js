@@ -8,7 +8,8 @@ app.set('view engine', '.hbs');
 
 let reviews = [
   { title: "Great Review", movieTitle: "Batman II" },
-  { title: "Awesome Movie", movieTitle: "Titanic" }
+  { title: "Awesome Movie", movieTitle: "Titanic" },
+  { title: "Weird Movie", movieTitle: "The human centipede" }
 ];
 
 app.get("/", (req,res)=>{
