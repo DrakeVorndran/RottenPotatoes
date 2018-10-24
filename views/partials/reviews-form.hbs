@@ -1,0 +1,33 @@
+<fieldset>
+        <legend>Edit Review</legend>
+<!--        title-->
+        <p>
+            <label for="review-title">Title</label>
+            <input id="review-title" type = "text" name="movieTitle" value="{{review.movieTitle}}">
+        </p>
+<!--        movie title-->
+        <p>
+            <label for="movie-title">Movie Title</label>
+            <input id="movie-title" type="text" name="movieTitle" value="{{review.movieTitle}}">
+            
+        </p>
+<!--        description-->
+        <p>
+            <label for="review-description">Description</label>
+            <textarea id="review-description" name="description">{{review.description}}</textarea>
+        </p>
+<!--        rating-->
+        <p>
+            <label for="rating">Rating</label>
+            <select id="rating" name="rating" value="{{review.rating}}">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                
+            </select>
+        </p>
+        
+    </fieldset>

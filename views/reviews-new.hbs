@@ -1,36 +1,5 @@
 <form method="post" action="/reviews">
-    <fieldset>
-        <legend>New Review</legend>
-<!--        Title-->
-        
-        <p>
-            <label for="title">Title</label>
-            <input type="text" name="title">
-        </p>
-<!--        Movie Title-->
-        <p>
-            <label for="movieTitle">Movie Title</label>
-            <input type="text" name="movieTitle">
-        </p>
-<!--        Description-->
-        <p>
-            <label for="description-text">Description</label>
-            <textarea id="description-text" name="description" rows=""></textarea>
-        </p>
-<!--        rating-->
-        <p>
-            <label >Rating</label>
-            <select id="rating" name="rating">
-                <option>0</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                
-            </select>
-        </p>
-    </fieldset>
+    {{> reviews-form}}
     
     <p>
         <button type="submit">Save Review</button>
