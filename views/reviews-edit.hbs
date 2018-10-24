@@ -1,8 +1,12 @@
 <form method="POST" action="/reviews/{{review.id}}?_method=PUT">
+    <legend>Edit Review</legend>
     {{> reviews-form}}
     <!-- BUTTON -->
-  <p>
-    <button type="submit">Save Review</button>
-  </p>
+    <p>
+        <button type="submit">Save Review</button>
+        
+
+    </p>
 
 </form>
+<a href="."><button>Cancel</button></a>
