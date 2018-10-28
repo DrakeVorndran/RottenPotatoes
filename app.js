@@ -29,9 +29,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get("/", (req,res)=>{
     Review.find()
         .then(reviews =>{
-    res.render('reviews-index', {reviews: reviews});
-        })
-    .catch( err => {
+        res.render('reviews-index', {reviews: reviews});
+    })
+        .catch( err => {
         console.log(err);
     })
 });
@@ -74,13 +74,24 @@ app.get('/reviews/:id/edit', (req, res) => {
 
 app.put('/reviews/:id', (req,res) => {
     Review.findByIdAndUpdate(req.params.id, req.body)
-    .then(review => {
+        .then(review => {
         res.redirect(`/reviews/${review._id}`)
     })
-    .catch(err => {
+        .catch(err => {
         console.log(err.message);
     })
 });
+
+
+app.delete('/reviews/:id', (req, res) => {
+    console.log("delete review")
+    Review.findByIdAndRemove(req.params.id).then((review) => {
+        res.redirect('/');
+    }).catch((err) => {
+        console.log(er.message);
+    })
+
+})
 
 
 app.listen(3000, () => {
