@@ -1,6 +1,7 @@
 
 module.exports = function(app) {
     const Review = require('../models/review');
+    const Comment = require('../models/comment');
 
     app.get('/', (req, res) => {
         Review.find()
@@ -34,7 +35,10 @@ module.exports = function(app) {
 
     app.get("/reviews/:id",(req,res)=>{
         Review.findById(req.params.id).then((review) => {
-            res.render('reviews-show', {review: review});
+            Comment.find({ reviewId: req.params.id}).then(comments => {
+                res.render('reviews-show', {review: review, comments: comments});
+
+            })
         }).catch((err) => {
             console.log(err.message);
         })

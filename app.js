@@ -18,6 +18,7 @@ app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: true}));
 
 const reviews = require('./controllers/reviews')(app);
+const comments = require('./controllers/comments')(app);
 
 //let reviews = [
 //  { title: "Great Review", movieTitle: "Batman II" },
